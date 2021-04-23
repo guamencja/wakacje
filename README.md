@@ -1,5 +1,8 @@
 # wakacje
-bot na discordzie, co liczy do wakacji, jakies gowno robione na moj serwer
+![putin rubin](https://forthebadge.com/images/badges/made-with-ruby.svg)
+
+bot na discordzie, co liczy do wakacji, jakies gowno robione na moj serwer  
+
 ![Pro licznik yes](https://repository-images.githubusercontent.com/360915450/f1733700-a454-11eb-8a13-3f98f50f8040)
 
 ## Ok jak teraz to cudo postawić
@@ -10,3 +13,5 @@ bot na discordzie, co liczy do wakacji, jakies gowno robione na moj serwer
 4. Jak żyjesz po lipcu 2021 to zupdatuj date na linijce 19
 5. Uruchom `gem install discordrb`
 6. Enjoy
+
+<!-- kukanq usuń powercorda -->
