@@ -8,4 +8,5 @@ bot na discordzie, co liczy do wakacji, jakies gowno robione na moj serwer
 2. Na linijce 5 daj token bota
 3. Na linijce 30 ustaw ID kanału
 4. Jak żyjesz po lipcu 2021 to zupdatuj date na linijce 19
-5. Enjoy
+5. Uruchom `gem install discordrb`
+6. Enjoy
