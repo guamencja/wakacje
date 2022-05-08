@@ -1,38 +1,26 @@
-require 'discordrb'
+require "dotenv/load"
+require "discordrb"
 
-# made by @lisqu16, and @programistazpolski
+bot = Discordrb::Bot.new token: ENV["TOKEN"]
 
-bot = Discordrb::Commands::CommandBot.new token: '', prefix: 's!'; # ej a co gdyby w wersji na githuba,
-# jako token wsadzić link do rickrolla zakodowany w base64 żeby wyglądał jak prawdziwy token?
-# XDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+# todo: dni bez weekendow, gdy wakacje odliczanie do konca wakacji
 
-#bot.command :ping do |event|
-    #m = event.respond "h"
-    #event.channel.send_embed do |embed|
-        #embed.colour = 0x000000
-        #embed.description = "Ping: #{Time.now - event.timestamp} ms\n\nWersja Ruby: #{RUBY_VERSION}"
-        #embed.timestamp = Time.now
-    #end
-    #m.delete
-    #nil
-#end
-
-Thread.new { 
-    # vacacje
-    deadline = Time.new(2021, 06, 25, 13, 30, 0, "+02:00")
-    m = bot.send_message "", "h"
-    while Time.now < deadline do 
-        puts Time.now.to_i, deadline.to_i
-        d = deadline.to_i - Time.now.to_i
-        seconds = (d % 60).round
-        minutes = (d % (60 * 60) / 60).round 
-        hours = (d % (60 * 60 * 24) / (60 * 60)).round
+# countdown
+Thread.new {
+    deadline = Time.new(Time.now.year, 06, 24, 12, 30, 0, "+02:00")
+    m = bot.send_message ENV["CHANNELID"], "..."
+    while Time.now < deadline do
+        d = deadline.to_i - Time.now.to_i # difference
+        sec = (d % 60).round 
+        min = (d % (60 * 60) / 60).round
+        hrs = (d & (60 * 60 * 24) / (60 * 60)).round
         days = (d / (60 * 60 * 24)).round
         weeks = (days / 7).round
-        months = (weeks / 4).round
-        m.edit "Pozostało #{days} dni, #{hours} godzin, #{minutes} minut i #{seconds} sekund! :tada:
-    To około: #{weeks} tygodni, bądź #{months} miesięcy!"
-        sleep 60
+        mnths = (days / 30).round
+
+        m.edit "Pozostało #{days} dni, #{hrs} godzin, #{min} minut i #{sec} sekund :tada:
+czyli ok. #{mnths} miesięcy lub #{weeks} tygodni"
+        sleep 30
     end
 }
 
