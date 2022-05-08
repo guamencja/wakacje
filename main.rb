@@ -13,7 +13,7 @@ Thread.new {
         d = deadline.to_i - Time.now.to_i # difference
         sec = (d % 60).round 
         min = (d % (60 * 60) / 60).round
-        hrs = (d & (60 * 60 * 24) / (60 * 60)).round
+        hrs = (d % (60 * 60 * 24) / (60 * 60)).round
         days = (d / (60 * 60 * 24)).round
         weeks = (days / 7).round
         mnths = (days / 30).round
