@@ -8,11 +8,13 @@ bot na discordzie, co liczy do wakacji, jakies gowno robione na moj serwer
 ## Ok jak teraz to cudo postawić
 0. Kup kąkuter
 1. Zainstaluj Putina aka Rubina aka Ruby (conajmniej 2.7 weź daj ok?)
-2. Na linijce 5 daj token bota
-3. Na linijce 20 ustaw ID kanału
-4. Jak żyjesz po lipcu 2021 to zupdatuj date na linijce 19
-5. Uruchom `gem install discordrb`
-6. Uruchom `ruby main.rb`
-7. Enjoy
+2. Stwórz plik .env
+```
+TOKEN=token
+CHANNELID=id kanału
+```
+3. Uruchom `gem install discordrb dotenv`
+4. Uruchom `ruby main.rb`
+5. Enjoy
 
-<!-- kukanq usuń powercorda -->
+<!-- kukanq usuń powercorda --> <!-- rel -->
