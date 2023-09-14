@@ -1,0 +1,14 @@
+{
+  "name": "summer_countdown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "guam",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "telegraf": "^4.13.1"
+  }
+}
